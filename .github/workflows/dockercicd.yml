@@ -24,10 +24,11 @@ jobs:
         -  name: Build and Push
            uses: docker/build-push-action@v2
            with: 
-            context: .
-            compose-file: ./docker-compose.yml
-            push: true
             tags: ${{ secrets.DOCKER_HUB_USERNAME }}/dockertutorial:latest
+              docker-compose up
+              docker-compose push           
+            
+           
           
            
   
