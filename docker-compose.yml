@@ -1,5 +1,4 @@
 version: '3.4'
-
 services:
   webapp:
     image: ${DOCKER_REGISTRY-}webapp
