@@ -6,12 +6,7 @@ on:
 jobs:
     build:
       runs-on: ubuntu-latest
-      strategy:
-        matrix: 
-            include:
-              - dockerfile: ./WebApp/Dockerfile
-              - dockerfile: ./WebAPI/Dockerfile
-              
+                    
       steps:
         - name: Repository Checkout
           uses: actions/checkout@v2 
@@ -28,7 +23,7 @@ jobs:
         -  name: Build and Push images to Docker Host
            uses: docker/build-push-action@v2
            with:      
-            dockerfile: ${{ matrix.dockerfile }}
+            dockerfile: ./WebAPP/Dockerfile
             push: true
             tags: ${{ secrets.DOCKER_HUB_USERNAME }}/dockerwebapp , ${{ secrets.DOCKER_HUB_USERNAME }}/dockerwebapi:latest
             
