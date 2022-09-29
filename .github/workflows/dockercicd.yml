@@ -24,6 +24,7 @@ jobs:
            uses: docker/build-push-action@v2
            with:      
             context: .
+            file: ${{ ./WebApp/Dockerfile, ./WebAPI/Dockerfile }}
             push: true
             tags: ${{ secrets.DOCKER_HUB_USERNAME }}/dockerwebapp , ${{ secrets.DOCKER_HUB_USERNAME }}/dockerwebapi:latest
              
