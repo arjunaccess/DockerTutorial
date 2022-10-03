@@ -25,7 +25,7 @@ jobs:
            with:      
             file: ./WebApp/Dockerfile
             push: true
-            tags: ${{ secrets.DOCKER_HUB_USERNAME }}/dockerwebapp:latest
+            tags: ${{ secrets.DOCKER_HUB_USERNAME }}/dockerwebappnow:latest
             
            
           
